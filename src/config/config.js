@@ -1,8 +1,8 @@
 // Environment configuration
 const config = {
   // API URLs
-  API_BASE_URL: import.meta.env.VITE_API_URL || 'http://localhost:5000',
-  SOCKET_URL: import.meta.env.VITE_SOCKET_URL || 'http://localhost:5000',
+  API_BASE_URL: import.meta.env.VITE_API_URL || (import.meta.env.PROD ? window.location.origin : 'http://localhost:5000'),
+  SOCKET_URL: import.meta.env.VITE_SOCKET_URL || (import.meta.env.PROD ? window.location.origin : 'http://localhost:5000'),
   
   // App settings
   APP_NAME: import.meta.env.VITE_APP_NAME || 'FundFlow',
