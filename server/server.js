@@ -59,6 +59,9 @@ mongoose.connect(process.env.MONGODB_URL , {
 .catch(err => console.log('MongoDB connection error:', err));
 
 // Routes
+app.get('/', (req, res) => {
+  res.send('Hello World');
+});
 app.use('/api/auth', authRoutes);
 app.use('/api/campaigns', campaignRoutes);
 app.use('/api/investments', investmentRoutes);
